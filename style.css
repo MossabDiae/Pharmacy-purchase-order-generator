@@ -8,19 +8,28 @@ html {
     width: 60%;
   }
   
-  #mdtable td, #mdtable th {
-    border: 1px solid #ddd;
-    padding: 8px;
-  }
-  
-  #mdtable tr:nth-child(even){background-color: #f2f2f2;}
-  
-  #mdtable tr:hover {background-color: #ddd;}
-  
-  #mdtable th {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    text-align: left;
-    background-color: #04AA6D;
-    color: white;
-  }
+#mdtable td, #mdtable th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#mdtable tr:nth-child(even){background-color: #f2f2f2;}
+
+#mdtable tr:hover {background-color: #ddd;}
+
+#mdtable th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}
+
+#item_input {
+  display: flex;
+}
+
+.namelab>label {
+  font-size: smaller;
+  font-weight: bold;
+}

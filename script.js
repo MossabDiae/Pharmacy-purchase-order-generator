@@ -29,6 +29,7 @@ function RenderTable(select) {
         tables_html[grp_name] = table_body;
         old_tbody.parentNode.replaceChild(table_body, old_tbody);
     }
+    addRowHandlers()
 
 }
 
@@ -43,6 +44,19 @@ function makeRow(rowdict) {
     return row
 }
 
+function addRowHandlers() {
+    rows = document.querySelectorAll("#mdtable > tbody > tr")
+    rows.forEach((row) => {
+        row.onclick = () => {
+            console.log("clicked !")
+            cells = row.getElementsByTagName("td")
+            // put the innerHtml of each cell in the right place
+            document.getElementById('code').value = cells[0].innerHTML
+            document.getElementById('name').value = cells[1].innerHTML
+            document.getElementById('uc').value = cells[2].innerHTML    
+        }
+    })
+}
 
 document.addEventListener('DOMContentLoaded', function () {
     setupDom();

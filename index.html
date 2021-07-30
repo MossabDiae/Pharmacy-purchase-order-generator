@@ -10,11 +10,37 @@
 </head>
 
 <body>
-    <input type="text" value="" name="" id="myinp" list="mydata" />
-    <datalist id="mydata">
-        <option value="Vanilla">Vanilla</option>
-        <option value="Chocolate">Chocolate</option>
-    </datalist><br>
+    <div id="item_input">
+        <div class="namelab">
+            <label for="code">code</label><br>
+            <input id="code" type="text">
+        </div>
+        <div class="namelab">
+            <label for="name">name</label><br>
+            <input id="name" type="text">
+        </div>
+        <div class="namelab">
+            <label for="uc">uc</label><br>
+            <input id="uc" type="text">
+        </div>
+        <div class="namelab">
+            <label for="qte">qte</label><br>
+            <input id="qte" type="text">
+        </div>
+        <div class="namelab">
+            <label for="stock">stock</label><br>
+            <input id="stock" type="text">
+        </div>
+        <div class="namelab">
+            <label for="prevision">prevision</label><br>
+            <input id="prevision" type="text">
+        </div>
+        <div class="namelab">
+            <label for="obs">obs</label><br>
+            <input id="obs" type="text">
+        </div>
+    </div>
+    <br>
     <label for="grselect">Select Group</label>
     <select id="grselect" onchange="RenderTable(this)" type="select"></select>
     <table id="mdtable">

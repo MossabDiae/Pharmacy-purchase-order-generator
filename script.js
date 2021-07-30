@@ -2,6 +2,9 @@
 // this will avoid regenerating them each time
 let tables_html = []
 
+// collect choices based on 
+// let choices = []
+
 function setupDom() {
     // adding select options for groups
     for (let group in data) {
@@ -58,6 +61,26 @@ function addRowHandlers() {
     })
 }
 
+function addToOrderList() {
+    order_table = document.querySelector("#orderlist tbody")
+    // prepare a row
+    order_row = document.createElement("tr")
+    // get current form state
+    form = document.querySelectorAll(".namelab > input")
+    // loop through form inputs and add them to row
+    form.forEach((input) => {
+        cell = document.createElement("td")
+        cell.innerHTML = input.value
+        order_row.appendChild(cell)
+    })
+    // add row to table's body
+    order_table.appendChild(order_row)
+}
+
 document.addEventListener('DOMContentLoaded', function () {
     setupDom();
+    document.querySelector('form').onsubmit = () => {
+        addToOrderList();
+        return false;
+    }
 })

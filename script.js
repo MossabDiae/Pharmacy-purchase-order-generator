@@ -1,15 +1,18 @@
-// <div id="zone" style="display: none;"></div>
+function makeRow(rowdict){
+    // take a dictionary and return a table row
+    let row  = document.createElement("tr")
+    for (let key in rowdict){
+        let cell = document.createElement("td")
+        cell.innerHTML = rowdict[key]
+        row.appendChild(cell)
+    }
+    return row
+}
 
-// function printZone() 
-// {
-// 	var zi = document.getElementById('zone').innerHTML;
-// 	var f = window.open("", "ZoneImpr", "height=500, width=600,toolbar=0, menubar=0, scrollbars=1, resizable=1,status=0, location=0, left=10, top=10");
-// 	f.document.body.style.color = '#000000';
-// 	f.document.body.style.backgroundColor = '#FFFFFF';
-// 	f.document.body.style.padding = "10px";
-// 	f.document.title = 'BAC 2021';
-// 	f.document.body.innerHTML += "	" + zi + "	";
-// 	f.window.print();
- 
-// 	return true;
-// }
+
+document.addEventListener('DOMContentLoaded', function() {
+    let table = document.querySelector("#mdtable")
+    data.dentaire.forEach(element => {
+        table.appendChild(makeRow(element))
+    });
+})

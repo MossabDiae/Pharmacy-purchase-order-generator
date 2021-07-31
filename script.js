@@ -55,7 +55,7 @@ function addRowHandlers() {
             // put the innerHtml of each cell in the right place
             document.getElementById('code').value = cells[0].innerHTML
             document.getElementById('name').value = cells[1].innerHTML
-            document.getElementById('uc').value = cells[2].innerHTML    
+            document.getElementById('uc').value = cells[2].innerHTML
         }
     })
 }
@@ -74,19 +74,20 @@ function addToOrderList() {
     })
     // Add remove button
     rmbutton = document.createElement("button")
-    rmbutton.classList.add('btn','btn-danger');
+    rmbutton.classList.add('btn', 'btn-danger');
     rmbutton.innerHTML = "delete"
 
     order_row.appendChild(rmbutton)
     // add row to table's body
     order_table.appendChild(order_row)
-    rmbutton.addEventListener('click', function(e) {
+    rmbutton.addEventListener('click', function (e) {
         e.target.parentElement.remove();
     })
 }
 
 document.addEventListener('DOMContentLoaded', function () {
     setupDom();
+    RenderTable(document.getElementById("grselect"));
     document.querySelector('form').onsubmit = () => {
         addToOrderList();
         return false;

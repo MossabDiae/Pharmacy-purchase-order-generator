@@ -51,7 +51,6 @@ function addRowHandlers() {
     rows = document.querySelectorAll("#mdtable > tbody > tr")
     rows.forEach((row) => {
         row.onclick = () => {
-            console.log("clicked !")
             cells = row.getElementsByTagName("td")
             // put the innerHtml of each cell in the right place
             document.getElementById('code').value = cells[0].innerHTML
@@ -73,8 +72,17 @@ function addToOrderList() {
         cell.innerHTML = input.value
         order_row.appendChild(cell)
     })
+    // Add remove button
+    rmbutton = document.createElement("button")
+    rmbutton.classList.add('btn','btn-danger');
+    rmbutton.innerHTML = "delete"
+
+    order_row.appendChild(rmbutton)
     // add row to table's body
     order_table.appendChild(order_row)
+    rmbutton.addEventListener('click', function(e) {
+        e.target.parentElement.remove();
+    })
 }
 
 document.addEventListener('DOMContentLoaded', function () {

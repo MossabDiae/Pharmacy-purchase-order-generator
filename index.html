@@ -11,6 +11,10 @@
 </head>
 
 <body>
+    <div class="diatech-h">
+        <div>Hospital pharmacy order generator</div>
+        <div>fb.com/diaetech</div>
+    </div>
     <ul class="nav nav-tabs" id="tabs">
         <li class="nav-item">
             <button class="nav-link active" type="button" id="home-tab" data-target="home" onclick="activateTab(this)">Home</button>
@@ -56,42 +60,46 @@
         <div id="inputs">
             <form>
                 <div id="item_input" class="container m-0">
-                    <div class="row ">
-                        <span class="namelab col-2 pe-0">
-                            <label for="code">code</label><br>
-                            <input id="code" type="text">
-                        </span>
-                        <span class="namelab col-7 pe-0">
-                            <label for="name">name</label><br>
-                            <input id="name" type="text">
-                        </span>
-                        <span class="namelab col-3">
-                            <label for="uc">uc</label><br>
-                            <input id="uc" type="text">
-                        </span>
-                        <!-- <div class="w-100"></div> -->
-                        <span class="namelab col-3 pe-0">
-                            <label for="qte">qte</label><br>
-                            <input id="qte" type="text">
-                        </span>
-                        <span class="namelab col-3 pe-0">
-                            <label for="stock">stock</label><br>
-                            <input id="stock" type="text">
-                        </span>
-                        <span class="namelab col-3 pe-0">
-                            <label for="prevision">prevision</label><br>
-                            <input id="prevision" type="text">
-                        </span>
-                        <span class="namelab col-3">
-                            <label for="obs">obs</label><br>
-                            <input id="obs" type="text">
-                        </span>
-                        <input type="submit" class="btn btn-success col m-2 ms-5 me-5" value="Add" disabled>
+                    <div class="row">
+                        <div class="col m-2">
+                            <div class="row">
+                                <span class="namelab col-2 pe-0">
+                                    <label for="code">code</label><br>
+                                    <input id="code" type="text">
+                                </span>
+                                <span class="namelab col-7 pe-0">
+                                    <label for="name">name</label><br>
+                                    <input id="name" type="text">
+                                </span>
+                                <span class="namelab col-3">
+                                    <label for="uc">uc</label><br>
+                                    <input id="uc" type="text">
+                                </span>
+                                <!-- <div class="w-100"></div> -->
+                                <span class="namelab col-3 pe-0">
+                                    <label for="qte">qte</label><br>
+                                    <input id="qte" type="text">
+                                </span>
+                                <span class="namelab col-3 pe-0">
+                                    <label for="stock">stock</label><br>
+                                    <input id="stock" type="text">
+                                </span>
+                                <span class="namelab col-3 pe-0">
+                                    <label for="prevision">prevision</label><br>
+                                    <input id="prevision" type="text">
+                                </span>
+                                <span class="namelab col-3">
+                                    <label for="obs">obs</label><br>
+                                    <input id="obs" type="text">
+                                </span>
+                            </div>
+                        </div>
+                        <input type="submit" class="btn btn-success col-1 m-2" value="Add" disabled>
                     </div>
                 </div>
             </form>
         </div>
-        <label for="grselect" class="form-label">Select Group</label>
+        <!-- <label for="grselect" class="form-label">Select Group</label> -->
         <select id="grselect" class="form-select" onchange="RenderTable(this)" type="select"></select>
         <div class="tableFixHead">
             <table id="mdtable">
@@ -113,6 +121,16 @@
         <div id="orderlist">
             <div id="list_title">List of orders</div>
             <table>
+                <colgroup>
+                    <col span="1" style="width: 5%;">
+                    <col span="1" style="width: 30%;">
+                    <col span="1" style="width: 5%;">
+                    <col span="1" style="width: 5%;">
+                    <col span="1" style="width: 5%;">
+                    <col span="1" style="width: 5%;">
+                    <col span="1" style="width: 10%;">
+                    <col span="1" style="width: 3%;">
+                </colgroup>
                 <thead>
                     <tr>
                         <th>code</th>
@@ -122,7 +140,7 @@
                         <th>stock</th>
                         <th>prevision</th>
                         <th>obs</th>
-                        <th>Remove</th>
+                        <!-- <th>Remove</th> -->
                     </tr>
                 </thead>
                 <tbody>
@@ -157,8 +175,8 @@
         <div id="info" class="rtl">
             <span>الهاتف: 049.21.02.06</span><span>رقم الفاكس: 049.21.02.28</span><span>البريد الإلكتروني:eph240bechar@yahoo.fr</span>
         </div>
-        <div class="rtl">
-            <span>بشار في</span><span id="dateholder"></span>
+        <div class="rtl ptime">
+            <span>بشار في: </span><span id="dateholder"></span>
         </div>
         <div id="prev-title">
             <h2>
@@ -189,7 +207,7 @@
                         <th>UC</th>
                         <th>QTE</th>
                         <th>Stock restant</th>
-                        <th>Prevision mensuelle</th>
+                        <th>Prevision mensuelle <span class="year"></span></th>
                         <th>OBS</th>
                     </tr>
                 </thead>
@@ -203,7 +221,9 @@
         </div>
 
     </div>
-    
+    <div class="diatech-f">
+        <div>© <span class="year"></span> DiaTech</div>
+    </div>
 </body>
 
 </html>

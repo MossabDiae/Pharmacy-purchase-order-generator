@@ -1,9 +1,37 @@
+.diatech-h, .diatech-f {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  background-color: rgb(2, 195, 131);
+  font-size: 12px;
+  font-weight: bold;
+  color: white;
+  padding: 0px 5px 0px 5px;
+}
+.diatech-f {
+  justify-content: center;
+  background-color: coral;
+}
 
-/* html {
-    padding: 15px;
-} */
-#prev {
+#pvheader, #info {
+  margin-bottom: 15px;
+}
+
+#home , #prev {
+  margin: 50px;
+}
+
+#home {
+  font: small;
+}
+
+.ptime span {
+  font-size: 30px;
+}
+
+#prev{
   display: none;
+  font-size: 20px;
 }
 #pvheader {
   text-align: center;
@@ -55,31 +83,37 @@
   min-width: 100%;
 }
 
-#item_input span {
+/* #item_input span {
   background-color: rgba(220, 20, 60, 0.226);
-}
+} */
 #item_input ,#grselect{
   min-width: 100%;
 }
 
 #inputs {
   width: 100%;
-  background-color: #d9faee;
+
+  /* background-color: #d9faee; */
 }
 
-#ordertable-prev>table {
+#ordertable-prev>table tr {
   border: 1px solid black;
   padding: 8px;
 }
 
-#mdtable, #orderlist>table, #ordertable-prev>table {
+#mdtable, #orderlist>table {
     font-family: Arial, Helvetica, sans-serif;
     border-collapse: collapse;
     width: 100%;
   }
   
-#mdtable td, #mdtable th, #orderlist td, #orderlist th {
+  #mdtable td, #mdtable th, #orderlist td, #orderlist th {
   border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#ordertable-prev td, #ordertable-prev th {
+  border: 1px solid black;
   padding: 8px;
 }
 
@@ -93,6 +127,16 @@
   text-align: left;
   background-color: #04AA6D;
   color: white;
+}
+#list_title {
+  font-size: 30px;
+  font-weight: bold;
+  margin: 25px;
+  margin-bottom: 5px;
+  color: coral;
+}
+#orderlist th {
+  background-color: coral;
 }
 
 /* #item_input {

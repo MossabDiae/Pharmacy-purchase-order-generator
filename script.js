@@ -79,7 +79,7 @@ function addToOrderList() {
     })
     // Add remove button
     rmbutton = document.createElement("button")
-    rmbutton.classList.add('btn', 'btn-danger');
+    rmbutton.classList.add('btn', 'btn-danger', 'btn-sm');
     rmbutton.innerHTML = "delete"
 
     order_row.appendChild(rmbutton)
@@ -121,16 +121,16 @@ function activateTab(tab) {
 }
 
 function generatePreview(tab) {
+    // fill the placeholders
     document.getElementById('dateholder').innerHTML = document.getElementById('orderdate').value
     document.getElementById('ordernumholder').innerHTML = document.getElementById('ordernum').value
     document.getElementById('bnumholder').innerHTML = document.getElementById('bnum').value
     document.getElementById('snumholder').innerHTML = document.getElementById('snum').value
     document.getElementById('ortdertable-bodyholder').innerHTML = document.querySelector("#orderlist tbody").innerHTML
+    // clean the table from remove buttons
     document.querySelectorAll('#ortdertable-bodyholder button').forEach((btn) => {
         btn.remove()
     })
-    
-
     
     activateTab(tab);
 }
@@ -167,5 +167,16 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('psytitle').style.display = 'none'
     }
     }
+    // Get date and fill current date + copyright
+    var dateObj = new Date();
+    var month = dateObj.getUTCMonth() + 1;
+    var day = dateObj.getUTCDate().toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false});
+    var year = dateObj.getUTCFullYear();
+    newdate = year + "/" + month.toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false}) + "/" + day;
+
+    document.querySelectorAll('.year').forEach((elem) => {
+        elem.innerHTML = year
+    })
+    document.getElementById('orderdate').value = newdate
 
 })

@@ -1,12 +1,39 @@
 
-html {
+/* html {
     padding: 15px;
+} */
+#psylab {
+  min-height: 100%;
+  padding: 15% 0;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: center;
+}
+
+.tableFixHead { overflow: auto; height: 300px; }
+.tableFixHead thead th { position: sticky; top: 0; z-index: 1; }
+
+#item_input span > input {
+  max-width: 100%;
+  min-width: 100%;
+}
+
+#item_input span {
+  background-color: rgba(220, 20, 60, 0.226);
+}
+#item_input ,#grselect{
+  min-width: 100%;
+}
+
+#inputs {
+  width: 100%;
+  background-color: #d9faee;
 }
 
 #mdtable, #orderlist>table, #list_title {
     font-family: Arial, Helvetica, sans-serif;
     border-collapse: collapse;
-    width: 60%;
+    width: 100%;
   }
   
 #mdtable td, #mdtable th, #orderlist td, #orderlist th {
@@ -18,7 +45,7 @@ html {
 
 #mdtable tr:hover {background-color: #ddd;}
 
-#mdtable th, #orderlist th, #list_title {
+#mdtable th, #orderlist th {
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: left;
@@ -26,9 +53,9 @@ html {
   color: white;
 }
 
-#item_input {
+/* #item_input {
   display: flex;
-}
+} */
 
 .namelab>label {
   font-size: smaller;

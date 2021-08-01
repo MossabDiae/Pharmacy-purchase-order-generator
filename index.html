@@ -6,57 +6,104 @@
     <script type="text/javascript" src="data.js"></script>
     <script type="text/javascript" src="script.js"></script>
     <link rel="stylesheet" href="style.css">
-    <!-- <link rel="stylesheet" href="bootstsrap.css"> -->
+    <link rel="stylesheet" href="bootstrap.css">
 
 </head>
 
 <body>
-    <form>
-        <div id="item_input">
-            <div class="namelab">
-                <label for="code">code</label><br>
-                <input id="code" type="text">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-5">
+                <div class="input-group p-1">
+                    <span class="input-group-text">N°</span>
+                    <input type="text" class="form-control" id="ordernum" placeholder="Order number">
+                </div>
+                <div class="input-group  p-1">
+                    <span class="input-group-text">Day</span>
+                    <input type="text" class="form-control" id="orderdate">
+                </div>
             </div>
-            <div class="namelab">
-                <label for="name">name</label><br>
-                <input id="name" type="text">
+            <div class="col-7">
+                <div class="row">
+                    <div class="col-3 p-1" id="psydrugs">
+                        <input type="checkbox" class="btn-check" id="btn-check-outlined" autocomplete="off">
+                        <label id="psylab" class="btn btn-outline-primary" for="btn-check-outlined">Psychoactive drugs</label><br>                        
+                    </div>
+                    <div class="col-9 p-1" id="bksb">
+                        <div class="input-group p-1">
+                            <span class="input-group-text">Book N°</span>
+                            <input type="text" class="form-control" id="bnum" disabled>
+                        </div>
+                        <div class="input-group p-1">
+                            <span class="input-group-text">Stub N°</span>
+                            <input type="text" class="form-control" id="snum" disabled>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="namelab">
-                <label for="uc">uc</label><br>
-                <input id="uc" type="text">
-            </div>
-            <div class="namelab">
-                <label for="qte">qte</label><br>
-                <input id="qte" type="text">
-            </div>
-            <div class="namelab">
-                <label for="stock">stock</label><br>
-                <input id="stock" type="text">
-            </div>
-            <div class="namelab">
-                <label for="prevision">prevision</label><br>
-                <input id="prevision" type="text">
-            </div>
-            <div class="namelab">
-                <label for="obs">obs</label><br>
-                <input id="obs" type="text">
-            </div>
-            <input type="submit" value="Add">
+
         </div>
-    </form>
-    <br>
-    <label for="grselect">Select Group</label>
-    <select id="grselect" onchange="RenderTable(this)" type="select"></select>
-    <table id="mdtable">
-        <thead>
-            <tr>
-                <th>code</th>
-                <th>name</th>
-                <th>UC</th>
-            </tr>
-        </thead>
-        <tbody></tbody>
-    </table>
+    </div>
+
+    <div id="inputs">
+        <form>
+            <div id="item_input" class="container m-0">
+                <div class="row ">
+                    <span class="namelab col-2 pe-0">
+                        <label for="code">code</label><br>
+                        <input id="code" type="text">
+                    </span>
+                    <span class="namelab col-7 pe-0">
+                        <label for="name">name</label><br>
+                        <input id="name" type="text">
+                    </span>
+                    <span class="namelab col-3">
+                        <label for="uc">uc</label><br>
+                        <input id="uc" type="text">
+                    </span>
+
+                    <!-- <div class="w-100"></div> -->
+
+                    <span class="namelab col-3 pe-0">
+                        <label for="qte">qte</label><br>
+                        <input id="qte" type="text">
+                    </span>
+                    <span class="namelab col-3 pe-0">
+                        <label for="stock">stock</label><br>
+                        <input id="stock" type="text">
+                    </span>
+                    <span class="namelab col-3 pe-0">
+                        <label for="prevision">prevision</label><br>
+                        <input id="prevision" type="text">
+                    </span>
+                    <span class="namelab col-3">
+                        <label for="obs">obs</label><br>
+                        <input id="obs" type="text">
+                    </span>
+                    <input type="submit" class="btn btn-success col m-2 ms-5 me-5" value="Add" disabled>
+                </div>
+            </div>
+        </form>
+    </div>
+    <label for="grselect" class="form-label">Select Group</label>
+    <select id="grselect" class="form-select" onchange="RenderTable(this)" type="select"></select>
+    <div class="tableFixHead">
+        <table id="mdtable">
+            <colgroup>
+                <col span="1" style="width: 15%;">
+                <col span="1" style="width: 70%;">
+                <col span="1" style="width: 15%;">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>code</th>
+                    <th>name</th>
+                    <th>UC</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
 
     <div id="orderlist">
         <div id="list_title">List of orders</div>

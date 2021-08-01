@@ -56,6 +56,10 @@ function addRowHandlers() {
             document.getElementById('code').value = cells[0].innerHTML
             document.getElementById('name').value = cells[1].innerHTML
             document.getElementById('uc').value = cells[2].innerHTML
+            // disable the submit button
+            toggleInput(document.querySelector("#item_input input[type=submit]"), 1)
+            // activate quantity input for convenience
+            document.getElementById('qte').focus()
         }
     })
 }
@@ -70,6 +74,7 @@ function addToOrderList() {
     form.forEach((input) => {
         cell = document.createElement("td")
         cell.innerHTML = input.value
+        input.value = ""
         order_row.appendChild(cell)
     })
     // Add remove button
@@ -85,11 +90,52 @@ function addToOrderList() {
     })
 }
 
+function toggleInput(element, state) {
+    switch (state) {
+        case "disable":
+        case "off":
+        case "disabled":
+        case 0:
+            element.setAttribute("disabled", "");
+            break;
+        case "enable":
+        case "enabled":
+        case "on":
+        case 1:
+            element.removeAttribute("disabled");
+            break;
+    }
+}
+
 document.addEventListener('DOMContentLoaded', function () {
     setupDom();
     RenderTable(document.getElementById("grselect"));
     document.querySelector('form').onsubmit = () => {
         addToOrderList();
+        toggleInput(document.querySelector("#item_input input[type=submit]"), 0);
         return false;
     }
+
+    // activate add submit only when there is name
+    document.getElementById("name").oninput = function () {
+        let addbtn = document.querySelector("#item_input input[type=submit]");
+        if (this.value.length > 0) {
+            toggleInput(addbtn, 1)
+        } else {
+            toggleInput(addbtn, 0)
+        }
+    }
+    // activate Book&stub inputs when psy-drugs are active
+    document.querySelector("#psydrugs input").onchange = function () {
+        if (this.checked) {
+            document.querySelectorAll("#bksb input").forEach((inp) => {
+                toggleInput(inp, 1)
+            })
+        } else {
+            document.querySelectorAll("#bksb input").forEach((inp) => {
+                toggleInput(inp, 0)
+        })
+    }
+    }
+
 })

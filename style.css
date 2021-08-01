@@ -2,6 +2,43 @@
 /* html {
     padding: 15px;
 } */
+#prev {
+  display: none;
+}
+#pvheader {
+  text-align: center;
+  text-decoration: underline;
+}
+
+#pvsubheader, #info, #sign {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#pvsubheader {
+  padding: 10px;
+  border-bottom: 1px solid #000000;
+  border-top: 1px solid #000000;
+}
+
+#pvsubheader img {
+  max-height: 150px;
+}
+
+.rtl {
+  direction: rtl;
+}
+
+#psytitle {
+  display: none;
+}
+
+#prev-title h2, #psytitle {
+  text-align: center;
+}
+
+
 #psylab {
   min-height: 100%;
   padding: 15% 0;
@@ -30,7 +67,12 @@
   background-color: #d9faee;
 }
 
-#mdtable, #orderlist>table, #list_title {
+#ordertable-prev>table {
+  border: 1px solid black;
+  padding: 8px;
+}
+
+#mdtable, #orderlist>table, #ordertable-prev>table {
     font-family: Arial, Helvetica, sans-serif;
     border-collapse: collapse;
     width: 100%;
@@ -41,7 +83,7 @@
   padding: 8px;
 }
 
-#mdtable tr:nth-child(even){background-color: #f2f2f2;}
+#mdtable tr:nth-child(even), #ordertable-prev>table tr:nth-child(even){background-color: #f2f2f2;}
 
 #mdtable tr:hover {background-color: #ddd;}
 

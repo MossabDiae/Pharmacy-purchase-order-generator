@@ -107,6 +107,34 @@ function toggleInput(element, state) {
     }
 }
 
+function activateTab(tab) {
+    // make all tabs and their divs inactive
+    tabs = document.querySelectorAll("button.nav-link")
+    tabs.forEach((t) => {
+        t.className = t.className.replace(" active", "");
+        document.getElementById(t.dataset.target).style.display = "none";
+    })
+    // activate and show current tab's target
+    tab.className = tab.className + " active";
+    document.getElementById(tab.dataset.target).style.display = "block";
+    
+}
+
+function generatePreview(tab) {
+    document.getElementById('dateholder').innerHTML = document.getElementById('orderdate').value
+    document.getElementById('ordernumholder').innerHTML = document.getElementById('ordernum').value
+    document.getElementById('bnumholder').innerHTML = document.getElementById('bnum').value
+    document.getElementById('snumholder').innerHTML = document.getElementById('snum').value
+    document.getElementById('ortdertable-bodyholder').innerHTML = document.querySelector("#orderlist tbody").innerHTML
+    document.querySelectorAll('#ortdertable-bodyholder button').forEach((btn) => {
+        btn.remove()
+    })
+    
+
+    
+    activateTab(tab);
+}
+
 document.addEventListener('DOMContentLoaded', function () {
     setupDom();
     RenderTable(document.getElementById("grselect"));
@@ -131,10 +159,12 @@ document.addEventListener('DOMContentLoaded', function () {
             document.querySelectorAll("#bksb input").forEach((inp) => {
                 toggleInput(inp, 1)
             })
+            document.getElementById('psytitle').style.display = 'block'
         } else {
             document.querySelectorAll("#bksb input").forEach((inp) => {
                 toggleInput(inp, 0)
         })
+        document.getElementById('psytitle').style.display = 'none'
     }
     }
 

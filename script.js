@@ -135,6 +135,25 @@ function generatePreview(tab) {
     activateTab(tab);
 }
 
+function printOrder() {
+    // change to correct page
+    generatePreview(document.getElementById('prev-tab'))
+    let toHide = document.querySelectorAll(".diatech-h, .diatech-f, #tabs");
+    toHide.forEach((elem) => {
+        elem.style.display = 'none';
+    })
+    // set file name
+    document.title = "BC N " + document.getElementById('ordernum').value
+    // print it !
+    window.print()
+    // refix the mess
+    toHide.forEach((elem) => {
+        elem.style.display = 'flex';
+    })
+    document.getElementById('tabs').style.display = ''
+
+}
+
 document.addEventListener('DOMContentLoaded', function () {
     setupDom();
     RenderTable(document.getElementById("grselect"));

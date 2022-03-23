@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>DiaTech | Hospital Ph Order Generator</title>
+    <title>Hospital Pharmacy Purchase Order Generator</title>
     <script type="text/javascript" src="data.js"></script>
     <script type="text/javascript" src="script.js"></script>
     <link rel="stylesheet" href="style.css">
@@ -12,8 +12,8 @@
 
 <body>
     <div class="diatech-h">
-        <div>Hospital pharmacy order generator</div>
-        <div>fb.com/diaetech</div>
+        <div>Hospital Pharmacy Purchase Order Generator</div>
+        <div>twitter.com/MossabDiae</div>
     </div>
     <ul class="nav nav-tabs" id="tabs">
         <li class="nav-item">
@@ -81,19 +81,19 @@
                                 </span>
                                 <!-- <div class="w-100"></div> -->
                                 <span class="namelab col-3 pe-0">
-                                    <label for="qte">qte</label><br>
+                                    <label for="qte">quantity</label><br>
                                     <input id="qte" type="text">
                                 </span>
                                 <span class="namelab col-3 pe-0">
-                                    <label for="stock">stock</label><br>
+                                    <label for="stock">in stock</label><br>
                                     <input id="stock" type="text">
                                 </span>
                                 <span class="namelab col-3 pe-0">
-                                    <label for="prevision">prevision</label><br>
+                                    <label for="prevision">forecast</label><br>
                                     <input id="prevision" type="text">
                                 </span>
                                 <span class="namelab col-3">
-                                    <label for="obs">obs</label><br>
+                                    <label for="obs">notes</label><br>
                                     <input id="obs" type="text">
                                 </span>
                             </div>
@@ -142,8 +142,8 @@
                         <th>UC</th>
                         <th>QTE</th>
                         <th>stock</th>
-                        <th>prevision</th>
-                        <th>obs</th>
+                        <th>forecast</th>
+                        <th>notes</th>
                         <!-- <th>Remove</th> -->
                     </tr>
                 </thead>
@@ -155,16 +155,16 @@
     <div id="prev">
         <div id="pvheader">
             الجمهورية الجزائرية الديمقراطية الشعبية<br>
-            République Algérienne Démocratique et Populaire<br>
+            People's Democratic Republic of Algeria<br>
             وزارة الصحة والسكان وإصلاح المستشفيات<br>
-            Ministère de la Santé de la population et de la réforme Hospitalière<br>
+            Ministry of Health, Population and Hospital Reform<br>
         </div>
         <div id="pvsubheader">
             <div>
-                Etablissement public Hospitalièr<br>
+                Public Hospital Establishment<br>
                 - tourabi boudjemaa -<br>
-                Wilaya de Béchar<br>
-                PHARMACIE CENTRALE<br>
+                Bechar Province<br>
+                CENTRAL PHARMACY<br>
             </div>
             <div>
                 <img src="hosp_bechar_logo.png">
@@ -184,15 +184,15 @@
         </div>
         <div id="prev-title">
             <h2>
-                BON DE COMMANDE N°<span id="ordernumholder"></span><br>
+                Purchase Order N°<span id="ordernumholder"></span><br>
             </h2>
             <h3 id="psytitle">
-                CARNET N°<span id="bnumholder"></span><br>
-                SOUCHE N°<span id="snumholder"></span>
+                BOOK N°<span id="bnumholder"></span><br>
+                STUB N°<span id="snumholder"></span>
             </h3>
-            <h2>URGENT</h2>
+            <!-- <h2>URGENT</h2> -->
         </div>
-        <h4>FOURNISSEUR : PCH BECHAR</h4>
+        <h4>PROVIDER: PCH BECHAR</h4>
         <div id="ordertable-prev">
             <table>
                 <colgroup>
@@ -207,12 +207,12 @@
                 <thead>
                     <tr>
                         <th>Code</th>
-                        <th>Désignation du produit</th>
+                        <th>Product name</th>
                         <th>UC</th>
                         <th>QTE</th>
-                        <th>Stock restant</th>
-                        <th>Prevision mensuelle <span class="year"></span></th>
-                        <th>OBS</th>
+                        <th>Remaining stock</th>
+                        <th>Monthly forecast <span class="year"></span></th>
+                        <th>Notes</th>
                     </tr>
                 </thead>
                 <tbody id="ortdertable-bodyholder">
@@ -220,13 +220,13 @@
             </table>
         </div>
         <div id="sign">
-            <h5>Le pharmacien</h5>
-            <h5>Le directeur</h5>
+            <h5>The Pharmacist</h5>
+            <h5>The Director</h5>
         </div>
 
     </div>
     <div class="diatech-f">
-        <div>© <span class="year"></span> DiaTech</div>
+        <div>© <span class="year"></span> MossabDiae</div>
     </div>
 </body>
 

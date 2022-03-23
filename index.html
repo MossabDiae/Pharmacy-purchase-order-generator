@@ -7,6 +7,7 @@
     <script type="text/javascript" src="script.js"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="bootstrap.css">
+    <link rel="icon" href="/favicon.png">
 
 </head>
 
@@ -103,8 +104,10 @@
                 </div>
             </form>
         </div>
-        <!-- <label for="grselect" class="form-label">Select Group</label> -->
-        <select id="grselect" class="form-select" onchange="RenderTable(this)" type="select"></select>
+        <span class="namelab col-3">
+            <label for="grselect" class="form-label">Product Category</label>
+            <select id="grselect" class="form-select" onchange="RenderTable(this)" type="select"></select>
+        </span>
         <div class="tableFixHead">
             <table id="mdtable">
                 <colgroup>
